@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Sangkan Park</title>
+  <link rel="icon" href="assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+  <link rel="stylesheet" href="assets/css/customer.css">
+</head>
+<body class="page-checkout">
+<div class="top-bar">
+  <div class="shell flex justify-between items-center">
+    <a href="pesan.html"><i class="ico ico-arrow-left mr-2"></i>Kembali</a>
+    <div class="flex items-center gap-2">
+      <img src="assets/img/logo_sangkan-removebg-preview.png" style="height:30px;" alt="">
+      <span class="bold">Checkout Tiket</span>
+    </div>
+    <span class="t-sm op-75"><i class="ico ico-shield-check mr-1"></i>Aman &amp; Terenkripsi</span>
+  </div>
+</div>
+
+<div class="shell py-4">
+  <div id="flashBox"></div>
+
+  <!-- STEP BAR -->
+  <div class="step-bar mb-4">
+    <div class="step done"><i class="ico ico-check mr-1"></i>Pilih Tiket</div>
+    <div class="step active"><i class="ico ico-pencil mr-1"></i>Isi Data</div>
+    <div class="step"><i class="ico ico-credit-card mr-1"></i>Pembayaran</div>
+    <div class="step"><i class="ico ico-qr-code mr-1"></i>Tiket</div>
+  </div>
+
+  <div class="grid gap-4">
+    <!-- FORM DATA -->
+    <div class="span-lg-7">
+      <form id="formCheckout">
+        <!-- DATA PEMESAN -->
+        <div class="card-box mb-3">
+          <h5 class="bold mb-3" style="color:#0f4c81;"><i class="ico ico-person mr-2"></i>Data Pemesan</h5>
+          <div class="grid gap-3">
+            <div class="span-12">
+              <label class="ui-label t-sm semibold" for="f_nama">Nama Lengkap <span class="t-danger">*</span></label>
+              <input type="text" class="ui-input" id="f_nama" placeholder="Masukkan nama lengkap" required maxlength="100">
+            </div>
+            <div class="span-sm-6">
+              <label class="ui-label t-sm semibold" for="f_email">Email <span class="t-danger">*</span></label>
+              <input type="email" class="ui-input" id="f_email" placeholder="email@gmail.com" required maxlength="100">
+            </div>
+            <div class="span-sm-6">
+              <label class="ui-label t-sm semibold" for="f_hp">No. Handphone</label>
+              <input type="tel" class="ui-input" id="f_hp" placeholder="08xxxxxxxxxx" maxlength="15">
+            </div>
+          </div>
+        </div>
+
+        <!-- DETAIL KUNJUNGAN -->
+        <div class="card-box mb-3">
+          <h5 class="bold mb-3" style="color:#0f4c81;"><i class="ico ico-calendar-event mr-2"></i>Detail Kunjungan</h5>
+          <div class="grid gap-3">
+            <div class="span-sm-6">
+              <label class="ui-label t-sm semibold" for="f_tgl">Tanggal Kunjungan <span class="t-danger">*</span></label>
+              <input type="date" class="ui-input" id="f_tgl" required>
+            </div>
+            <div class="span-sm-6">
+              <label class="ui-label t-sm semibold" for="f_qty">Jumlah Tiket</label>
+              <input type="text" class="ui-input" id="f_qty" readonly>
+            </div>
+          </div>
+          <div class="info-box mt-3">
+            <i class="ico ico-info-circle mr-1"></i>
+            Jam Operasional: <strong>08.00 – 17.00 WIB</strong> setiap hari. Tiket berlaku seharian.
+          </div>
+        </div>
+
+        <!-- METODE BAYAR -->
+        <div class="card-box mb-3">
+          <h5 class="bold mb-3" style="color:#0f4c81;"><i class="ico ico-credit-card mr-2"></i>Metode Pembayaran</h5>
+          <div class="grid gap-3">
+            <div class="span-sm-6">
+              <label class="metode-bayar flex items-center gap-3 selected">
+                <input type="radio" name="metode_bayar" value="Transfer" checked class="hidden">
+                <div class="r-3 flex items-center justify-center" style="width:40px;height:40px;background:#e0f0ff;color:#0f4c81;flex-shrink:0;"><i class="ico ico-bank2" style="font-size:1.2rem;"></i></div>
+                <div><div class="semibold t-sm">Transfer Bank</div><div class="t-muted" style="font-size:.72rem;">Upload bukti setelah pesan</div></div>
+              </label>
+            </div>
+            <div class="span-sm-6">
+              <label class="metode-bayar flex items-center gap-3">
+                <input type="radio" name="metode_bayar" value="Online" class="hidden">
+                <div class="r-3 flex items-center justify-center" style="width:40px;height:40px;background:#e8f5e9;color:#388e3c;flex-shrink:0;"><i class="ico ico-phone" style="font-size:1.2rem;"></i></div>
+                <div><div class="semibold t-sm">Bayar di Tempat</div><div class="t-muted" style="font-size:.72rem;">Bayar saat tiba di loket</div></div>
+              </label>
+            </div>
+          </div>
+          <div class="info-box mt-3">
+            <i class="ico ico-info-circle mr-1"></i>
+            Pilih <strong>Transfer Bank</strong> untuk bayar online, atau <strong>Bayar di Tempat</strong> langsung di loket.
+          </div>
+        </div>
+
+        <!-- SYARAT -->
+        <div class="card-box mb-3">
+          <div class="ui-check">
+            <input class="ui-check-input" type="checkbox" id="agree" required>
+            <label class="ui-check-label t-sm" for="agree">
+              Saya memahami bahwa tiket <strong>tidak dapat di-refund</strong> dan setuju dengan syarat &amp; ketentuan Sangkan Resort Aqua Park.
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-checkout" id="btnSubmit">
+          <i class="ico ico-lock-fill mr-2"></i>Konfirmasi &amp; Buat Pesanan
+        </button>
+      </form>
+    </div>
+
+    <!-- ORDER SUMMARY -->
+    <div class="span-lg-5">
+      <div class="card-box" style="position:sticky;top:20px;" id="orderSummary"></div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/qr.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/checkout.js"></script>
+</body>
+</html>

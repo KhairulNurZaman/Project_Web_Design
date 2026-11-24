@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Sangkan Park</title>
+  <link rel="icon" href="assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body class="page-login">
+<div class="auth-bg">
+  <div class="auth-bg-content">
+    <h1 class="display bold mb-3">Sangkan Resort<br>Aqua Park</h1>
+    <p class="op-75 mb-4">Platform E-Ticketing resmi Sangkan Resort Aqua Park, Kuningan - Jawa Barat.</p>
+    <div class="flex items-center gap-2 mb-2"><i class="ico ico-check-circle-fill t-warning"></i><span>Tiket Digital QR Code</span></div>
+    <div class="flex items-center gap-2 mb-2"><i class="ico ico-check-circle-fill t-warning"></i><span>Pemesanan 24/7 Online</span></div>
+    <div class="flex items-center gap-2"><i class="ico ico-check-circle-fill t-warning"></i><span>Konfirmasi Instan</span></div>
+  </div>
+</div>
+
+<div class="auth-panel ml-auto">
+  <div class="t-center mb-4">
+    <img src="assets/img/logo_sangkan-removebg-preview.png" alt="Logo" style="height:50px;">
+    <h5 class="mt-2 mb-0 bold" style="color:#0f4c81;">Masuk ke Akun Anda</h5>
+    <p class="t-muted t-sm">E-Ticketing Sangkan Resort Aqua Park</p>
+  </div>
+
+  <div id="flashBox"></div>
+
+  <div class="flex bd-b mb-4">
+    <button type="button" class="tab-btn active" id="tabCust"><i class="ico ico-person mr-1"></i>Customer</button>
+    <button type="button" class="tab-btn" id="tabStaff"><i class="ico ico-person-badge mr-1"></i>Staff</button>
+  </div>
+
+  <div id="formCustomer">
+    <form class="js-login">
+      <div class="mb-3">
+        <label class="ui-label semibold t-sm" for="emailCust">Email</label>
+        <div class="ui-group">
+          <span class="ui-group-text"><i class="ico ico-envelope"></i></span>
+          <input type="email" class="ui-input" name="username" id="emailCust" placeholder="email@gmail.com" required autocomplete="username">
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="ui-label semibold t-sm" for="pwdCust">Password</label>
+        <div class="ui-group">
+          <span class="ui-group-text"><i class="ico ico-lock"></i></span>
+          <input type="password" class="ui-input" name="password" id="pwdCust" placeholder="••••••" required autocomplete="current-password">
+          <button type="button" class="ui-btn ui-btn-outline-secondary bd-l-0 js-toggle-pwd" data-target="pwdCust" aria-label="Tampilkan password"><i class="ico ico-eye"></i></button>
+        </div>
+      </div>
+      <button type="submit" class="ui-btn btn-login w-full r-pill py-2 mb-3">Masuk sebagai Customer</button>
+    </form>
+    <p class="t-center t-sm mb-3">Belum punya akun? <a href="register.html" class="semibold" style="color:#0f4c81;">Daftar Sekarang</a></p>
+    <hr><a href="pesan.html" class="ui-btn ui-btn-outline-warning w-full r-pill"><i class="ico ico-ticket mr-1"></i>Pesan Tanpa Akun</a>
+  </div>
+
+  <div id="formStaff" style="display:none;">
+    <form class="js-login">
+      <div class="mb-3">
+        <label class="ui-label semibold t-sm" for="userStaff">Username</label>
+        <div class="ui-group">
+          <span class="ui-group-text"><i class="ico ico-person-circle"></i></span>
+          <input type="text" class="ui-input" name="username" id="userStaff" placeholder="Username" required autocomplete="username">
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="ui-label semibold t-sm" for="pwdStaff">Password</label>
+        <div class="ui-group">
+          <span class="ui-group-text"><i class="ico ico-lock"></i></span>
+          <input type="password" class="ui-input" name="password" id="pwdStaff" placeholder="••••••" required autocomplete="current-password">
+          <button type="button" class="ui-btn ui-btn-outline-secondary bd-l-0 js-toggle-pwd" data-target="pwdStaff" aria-label="Tampilkan password"><i class="ico ico-eye"></i></button>
+        </div>
+      </div>
+      <button type="submit" class="ui-btn btn-login w-full r-pill py-2">Masuk sebagai Staff</button>
+    </form>
+    <p class="t-center t-muted t-sm mt-3"><i class="ico ico-shield-lock mr-1"></i>Khusus Admin &amp; Manajer Sangkan Park</p>
+  </div>
+
+  <p class="t-center t-muted t-sm mt-4"><a href="index.html" class="t-muted"><i class="ico ico-arrow-left mr-1"></i>Kembali ke Beranda</a></p>
+</div>
+
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/qr.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/auth.js"></script>
+</body>
+</html>

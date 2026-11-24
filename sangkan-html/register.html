@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar | Sangkan Park</title>
+  <link rel="icon" href="assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body class="page-register">
+<div class="auth-bg">
+  <div class="auth-bg-content">
+    <h1 class="display bold mb-3">Bergabung Bersama<br>Sangkan Park</h1>
+    <p class="op-75 mb-4">Daftar sekarang dan nikmati kemudahan pemesanan tiket online kapan saja dan di mana saja.</p>
+    <div class="flex items-center gap-2 mb-2"><i class="ico ico-star-fill t-warning"></i><span>Akses Riwayat Pemesanan</span></div>
+    <div class="flex items-center gap-2 mb-2"><i class="ico ico-star-fill t-warning"></i><span>Simpan Data Otomatis</span></div>
+    <div class="flex items-center gap-2"><i class="ico ico-star-fill t-warning"></i><span>Notifikasi Status Tiket</span></div>
+  </div>
+</div>
+
+<div class="auth-panel ml-auto">
+  <div class="t-center mb-4">
+    <img src="assets/img/logo_sangkan-removebg-preview.png" alt="Logo" style="height:50px;">
+    <h5 class="mt-2 mb-0 bold" style="color:#0f4c81;">Buat Akun Baru</h5>
+    <p class="t-muted t-sm">Gratis dan hanya butuh beberapa detik</p>
+  </div>
+
+  <div id="flashBox"></div>
+
+  <form id="formRegister">
+    <div class="mb-3">
+      <label class="ui-label semibold t-sm" for="regNama">Nama Lengkap <span class="t-danger">*</span></label>
+      <div class="ui-group">
+        <span class="ui-group-text"><i class="ico ico-person"></i></span>
+        <input type="text" class="ui-input" name="nama_lengkap" id="regNama" placeholder="Nama lengkap Anda" required maxlength="100">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="ui-label semibold t-sm" for="regEmail">Email <span class="t-danger">*</span></label>
+      <div class="ui-group">
+        <span class="ui-group-text"><i class="ico ico-envelope"></i></span>
+        <input type="email" class="ui-input" name="email" id="regEmail" placeholder="email@gmail.com" required maxlength="100" autocomplete="username">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="ui-label semibold t-sm" for="regTelp">No. Handphone</label>
+      <div class="ui-group">
+        <span class="ui-group-text"><i class="ico ico-phone"></i></span>
+        <input type="tel" class="ui-input" name="no_telp" id="regTelp" placeholder="08xxxxxxxxxx" maxlength="15">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="ui-label semibold t-sm" for="pwd1">Password <span class="t-danger">*</span></label>
+      <div class="ui-group">
+        <span class="ui-group-text"><i class="ico ico-lock"></i></span>
+        <input type="password" class="ui-input" name="password" id="pwd1" placeholder="Min. 6 karakter" required minlength="6" autocomplete="new-password">
+        <button type="button" class="ui-btn ui-btn-outline-secondary bd-l-0 js-toggle-pwd" data-target="pwd1" aria-label="Tampilkan password"><i class="ico ico-eye"></i></button>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="ui-label semibold t-sm" for="pwd2">Konfirmasi Password <span class="t-danger">*</span></label>
+      <div class="ui-group">
+        <span class="ui-group-text"><i class="ico ico-lock-fill"></i></span>
+        <input type="password" class="ui-input" name="confirm_password" id="pwd2" placeholder="Ulangi password" required autocomplete="new-password">
+        <button type="button" class="ui-btn ui-btn-outline-secondary bd-l-0 js-toggle-pwd" data-target="pwd2" aria-label="Tampilkan password"><i class="ico ico-eye"></i></button>
+      </div>
+      <div id="pwdMatch" class="ui-hint"></div>
+    </div>
+    <div class="ui-check mb-3">
+      <input class="ui-check-input" type="checkbox" id="agree" required>
+      <label class="ui-check-label t-sm" for="agree">Saya setuju dengan <a href="#" style="color:#0f4c81;">syarat dan ketentuan</a> berlaku.</label>
+    </div>
+    <button type="submit" class="ui-btn btn-reg w-full r-pill py-2 mb-3">Daftar Sekarang</button>
+  </form>
+
+  <p class="t-center t-sm">Sudah punya akun? <a href="login.html" class="semibold" style="color:#0f4c81;">Masuk di sini</a></p>
+  <p class="t-center t-muted t-sm mt-2"><a href="index.html" class="t-muted"><i class="ico ico-arrow-left mr-1"></i>Kembali ke Beranda</a></p>
+</div>
+
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/qr.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/auth.js"></script>
+</body>
+</html>

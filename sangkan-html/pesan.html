@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan Tiket | Sangkan Park</title>
+  <link rel="icon" href="assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+  <link rel="stylesheet" href="assets/css/customer.css">
+</head>
+<body class="page-pesan">
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="shell flex justify-between items-center">
+    <a href="index.html"><i class="ico ico-arrow-left mr-2"></i>Kembali ke Beranda</a>
+    <div class="flex items-center gap-2">
+      <img src="assets/img/logo_sangkan-removebg-preview.png" style="height:30px;" alt="Logo">
+      <span class="bold">E-Ticketing Sangkan Park</span>
+    </div>
+    <div class="flex gap-2" id="topAuth"></div>
+  </div>
+</div>
+
+<div class="shell py-4">
+  <div id="flashBox"></div>
+
+  <div class="grid gap-4">
+    <!-- LEFT: PILIH TIKET -->
+    <div class="span-lg-8">
+      <h4 class="bold mb-1" style="color:#0f4c81;"><i class="ico ico-ticket-perforated mr-2"></i>Pilih Tiket</h4>
+      <p class="t-muted t-sm mb-3">Klik tiket untuk memilih, lalu isi data dan pesan!</p>
+
+      <!-- Filter Kategori -->
+      <div class="mb-3 flex gap-2 flex-wrap" id="catPills">
+        <span class="cat-pill active" data-kat="all">Semua</span>
+        <span class="cat-pill" data-kat="weekday">Weekday</span>
+        <span class="cat-pill" data-kat="weekend">Weekend</span>
+        <span class="cat-pill" data-kat="promo">Promo</span>
+        <span class="cat-pill" data-kat="paket">Paket</span>
+      </div>
+
+      <div class="grid gap-3" id="ticketList"></div>
+    </div>
+
+    <!-- RIGHT: SUMMARY & FORM -->
+    <div class="span-lg-4">
+      <div class="summary-box">
+        <h5 class="bold mb-3" style="color:#0f4c81;"><i class="ico ico-bag-check mr-2"></i>Ringkasan Pesanan</h5>
+
+        <div id="summaryEmpty" class="t-center py-4 t-muted">
+          <i class="ico ico-ticket-perforated" style="font-size:2.5rem;opacity:.3;"></i>
+          <p class="mt-2 t-sm">Pilih tiket terlebih dahulu</p>
+        </div>
+
+        <div id="summaryContent" style="display:none;">
+          <div class="bgc-light r-3 p-3 mb-3">
+            <div class="label">Tiket Dipilih</div>
+            <div class="value" id="s_nama">-</div>
+            <div class="label mt-1">Harga Satuan</div>
+            <div class="value t-warning" id="s_harga">-</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="ui-label t-sm semibold" for="qty_input">Jumlah Tiket</label>
+            <div class="ui-group">
+              <button type="button" class="ui-btn ui-btn-outline-secondary" id="qtyMinus" aria-label="Kurangi">-</button>
+              <input type="number" class="ui-input t-center" id="qty_input" value="1" min="1" max="20">
+              <button type="button" class="ui-btn ui-btn-outline-secondary" id="qtyPlus" aria-label="Tambah">+</button>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="ui-label t-sm semibold" for="tgl_kunjungan">Tanggal Kunjungan</label>
+            <input type="date" class="ui-input" id="tgl_kunjungan">
+          </div>
+
+          <div class="flex justify-between bold mb-3 p-2 bgc-light r">
+            <span>Total</span>
+            <span class="t-primary" id="s_total">Rp 0</span>
+          </div>
+
+          <button type="button" class="ui-btn w-full bold py-2" style="background:#f4a61c;color:#fff;border:none;border-radius:50px;" id="btnCheckout">
+            <i class="ico ico-arrow-right-circle mr-1"></i>Lanjut ke Checkout
+          </button>
+          <p class="t-center t-muted mt-2" style="font-size:.7rem;"><i class="ico ico-shield-check mr-1"></i>Transaksi aman &amp; terenkripsi</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/qr.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/pesan.js"></script>
+</body>
+</html>

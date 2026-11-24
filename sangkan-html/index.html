@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sangkan Resort Aqua Park, Kuningan - Jawa Barat. Pesan tiket online, lihat denah wahana dan lokasi.">
+  <title>Sangkan Resort Aqua Park - E-Ticketing</title>
+  <link rel="icon" href="assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-icon-180x180.png">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+  <link rel="stylesheet" href="assets/css/landing.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="topnav" id="navbar">
+  <div class="shell topnav-bar">
+    <a class="topnav-brand" href="index.html">
+      <img src="assets/img/logo_sangkan-removebg-preview.png" alt="Logo">
+      Sangkan Park
+    </a>
+    <button class="topnav-toggle" type="button" data-toggle-menu="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Buka menu">
+      <i class="ico ico-list"></i>
+    </button>
+    <div class="topnav-menu" id="navMenu">
+      <ul class="topnav-links">
+        <li><a class="topnav-link" href="#tentang">Tentang</a></li>
+        <li><a class="topnav-link" href="#tiket">Tiket</a></li>
+        <li><a class="topnav-link" href="#denah">Denah</a></li>
+        <li><a class="topnav-link" href="#lokasi">Lokasi</a></li>
+        <li><a class="topnav-link" href="#cara-pesan">Cara Pesan</a></li>
+        <li><a class="topnav-link" href="#kontak">Kontak</a></li>
+      </ul>
+      <div class="topnav-actions" id="navAuth">
+        <a href="login.html" class="nav-btn nav-btn-ghost"><i class="ico ico-person mr-1"></i>Masuk</a>
+        <a href="register.html" class="nav-btn nav-btn-outline">Daftar</a>
+        <a href="pesan.html" class="nav-btn nav-btn-solid">Pesan Tiket</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="shell">
+    <div class="grid items-center">
+      <div class="span-lg-7">
+        <div class="hero-content">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <div class="hero-badge mb-0"><i class="ico ico-geo-alt mr-1"></i>Kuningan, Jawa Barat</div>
+            <div class="hero-badge hero-status mb-0" id="statusBuka" hidden></div>
+          </div>
+          <h1>Wisata Air Terbaik<br>di <span>Jawa Barat</span></h1>
+          <p>Nikmati pengalaman seru di Sangkan Resort Aqua Park — waterpark pertama yang memadukan fasilitas wahana air dan resort mewah.</p>
+          <div class="hero-btns">
+            <a href="pesan.html" class="btn-hero-primary"><i class="ico ico-ticket-perforated mr-2"></i>Beli Tiket Sekarang</a>
+            <a href="#tiket" class="btn-hero-outline"><i class="ico ico-eye mr-2"></i>Lihat Paket</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong>50K+</strong><span>Pengunjung/Tahun</span></div>
+            <div class="hero-stat"><strong>15+</strong><span>Wahana Seru</span></div>
+            <div class="hero-stat"><strong>4.8★</strong><span>Rating Google</span></div>
+            <div class="hero-stat"><strong>2011</strong><span>Berdiri Sejak</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH / QUICK ORDER -->
+<div class="shell" id="tiket">
+  <div class="search-wrap">
+    <div class="quick-row">
+      <div class="quick-title">
+        <h5 class="mb-0"><i class="ico ico-ticket-perforated mr-2"></i>Pilih Tiket Anda</h5>
+      </div>
+      <div class="quick-form">
+        <form action="pesan.html" method="GET" class="grid gap-2" id="formQuick">
+          <div class="span-sm-5">
+            <select name="tiket" class="ui-select" id="quickTiket" aria-label="Jenis tiket">
+              <option value="">-- Pilih Jenis Tiket --</option>
+            </select>
+          </div>
+          <div class="span-sm-3">
+            <input type="date" name="tgl" class="ui-input" id="quickTgl" aria-label="Tanggal kunjungan">
+          </div>
+          <div class="span-sm-2">
+            <input type="number" name="qty" class="ui-input" placeholder="Qty" min="1" max="20" value="1" aria-label="Jumlah tiket">
+          </div>
+          <div class="span-sm-2">
+            <button type="submit" class="ui-btn w-full btn-quick">Pesan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIKET SECTION -->
+<section class="bg-light-sp">
+  <div class="shell">
+    <div class="t-center mb-5">
+      <div class="section-badge"><i class="ico ico-ticket mr-1"></i>Paket Tiket</div>
+      <h2 class="section-title">Pilih Tiket Terbaik Anda</h2>
+      <p class="section-sub mx-auto mt-2">Temukan paket tiket yang sesuai dengan kebutuhan dan budget Anda.</p>
+    </div>
+    <div class="cards-flex" id="ticketGrid"></div>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+  <div class="shell">
+    <div class="grid items-center gap-5">
+      <div class="span-lg-6">
+        <div class="section-badge">Tentang Kami</div>
+        <h2 class="section-title mb-3">Sangkan Resort Aqua Park</h2>
+        <p class="t-muted mb-3">Sangkan Resort Aqua Park adalah destinasi wisata air terkemuka di Kabupaten Kuningan, Jawa Barat. Berdiri sejak 2011 di bawah naungan PT. Sangkan Park, kami menghadirkan pengalaman wisata yang memadukan fasilitas waterpark modern dengan resort nyaman.</p>
+        <p class="t-muted mb-4">Dengan motto <em>"Friendly, Safety and Fun"</em>, kami berkomitmen memberikan pengalaman terbaik bagi seluruh keluarga.</p>
+        <div class="grid gap-3">
+          <div class="span-6">
+            <div class="flex items-center gap-2 p-3 r-3" style="background:#f0f8ff;">
+              <div class="feature-icon" style="background:#e0f0ff;color:#0f4c81;width:40px;height:40px;border-radius:10px;font-size:1.1rem;flex-shrink:0;"><i class="ico ico-shield-check"></i></div>
+              <div><div class="bold t-sm">Safety First</div><div class="t-muted" style="font-size:.75rem;">Standar keamanan tinggi</div></div>
+            </div>
+          </div>
+          <div class="span-6">
+            <div class="flex items-center gap-2 p-3 r-3" style="background:#fff8e1;">
+              <div class="feature-icon" style="background:#fff3cd;color:#f4a61c;width:40px;height:40px;border-radius:10px;font-size:1.1rem;flex-shrink:0;"><i class="ico ico-star"></i></div>
+              <div><div class="bold t-sm">4.8★ Rating</div><div class="t-muted" style="font-size:.75rem;">Google Reviews</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span-lg-6">
+        <div class="grid gap-3">
+          <div class="span-6">
+            <div class="feature-card">
+              <div class="feature-icon" style="background:#e0f0ff;color:#0f4c81;"><i class="ico ico-water"></i></div>
+              <h6 class="bold">15+ Wahana Air</h6>
+              <p class="t-muted t-sm mb-0">Berbagai wahana seru untuk semua usia</p>
+            </div>
+          </div>
+          <div class="span-6">
+            <div class="feature-card">
+              <div class="feature-icon" style="background:#e8f5e9;color:#388e3c;"><i class="ico ico-tree"></i></div>
+              <h6 class="bold">Area Resort</h6>
+              <p class="t-muted t-sm mb-0">Penginapan nyaman di tengah alam</p>
+            </div>
+          </div>
+          <div class="span-6">
+            <div class="feature-card">
+              <div class="feature-icon" style="background:#fff8e1;color:#f4a61c;"><i class="ico ico-cup-hot"></i></div>
+              <h6 class="bold">Resto &amp; Café</h6>
+              <p class="t-muted t-sm mb-0">Kuliner lezat dengan pemandangan indah</p>
+            </div>
+          </div>
+          <div class="span-6">
+            <div class="feature-card">
+              <div class="feature-icon" style="background:#fce4ec;color:#c62828;"><i class="ico ico-geo-alt"></i></div>
+              <h6 class="bold">Mudah Dijangkau</h6>
+              <p class="t-muted t-sm mb-0">Jl. Raya Bandorasa Km. 12, Kuningan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAHANA & FASILITAS (baru) -->
+<section class="bg-light-sp" id="wahana">
+  <div class="shell">
+    <div class="t-center mb-5">
+      <div class="section-badge"><i class="ico ico-water mr-1"></i>Wahana &amp; Fasilitas</div>
+      <h2 class="section-title">Seru untuk Semua Usia</h2>
+      <p class="section-sub mx-auto mt-2">Dari seluncuran memacu adrenalin sampai kolam aman untuk si kecil.</p>
+    </div>
+    <div class="grid gap-4" id="wahanaGrid"></div>
+  </div>
+</section>
+
+<!-- DENAH -->
+<section id="denah">
+  <div class="shell">
+    <div class="t-center mb-5">
+      <div class="section-badge"><i class="ico ico-map mr-1"></i>Denah Wisata</div>
+      <h2 class="section-title">Denah Sangkan Aqua Park &amp; Resort</h2>
+      <p class="section-sub mx-auto mt-2">Klik denah untuk memperbesar, lalu lihat keterangan tiap area di samping.</p>
+    </div>
+    <div class="grid gap-4 items-start">
+      <div class="span-lg-5">
+        <button type="button" class="denah-thumb" data-open-modal="#modalDenah" aria-label="Perbesar denah">
+          <img src="assets/img/denah-sangkan.jpg" alt="Denah Sangkan Aqua Park &amp; Resort" width="1153" height="2576" loading="lazy">
+          <span class="denah-zoom"><i class="ico ico-zoom-in mr-1"></i>Perbesar</span>
+        </button>
+      </div>
+      <div class="span-lg-7">
+        <h5 class="bold mb-3" style="color:#0f4c81;">Area di Dalam Denah</h5>
+        <div class="denah-areas" id="denahAreas"></div>
+        <h5 class="bold mt-4 mb-3" style="color:#0f4c81;">Legenda</h5>
+        <div class="denah-legend" id="denahLegend"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ui-modal ui-fade" id="modalDenah" tabindex="-1" aria-hidden="true">
+  <div class="ui-modal-dialog denah-dialog">
+    <div class="ui-modal-content">
+      <div class="ui-modal-header">
+        <h6 class="ui-modal-title bold">Denah Sangkan Aqua Park &amp; Resort</h6>
+        <button type="button" class="ui-close" data-close-modal aria-label="Tutup"></button>
+      </div>
+      <div class="ui-modal-body denah-modal-body">
+        <img src="assets/img/denah-sangkan.jpg" alt="Denah Sangkan Aqua Park &amp; Resort (ukuran penuh)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOKASI + GOOGLE MAPS (baru) -->
+<section class="bg-light-sp" id="lokasi">
+  <div class="shell">
+    <div class="t-center mb-5">
+      <div class="section-badge"><i class="ico ico-geo-alt mr-1"></i>Lokasi</div>
+      <h2 class="section-title">Menuju Sangkan Resort Aqua Park</h2>
+      <p class="section-sub mx-auto mt-2">Temukan rute tercepat dari lokasi Anda lewat Google Maps.</p>
+    </div>
+    <div class="grid gap-4">
+      <div class="span-lg-8">
+        <div class="map-wrap">
+          <iframe id="mapFrame" title="Peta lokasi Sangkan Resort Aqua Park di Google Maps" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Sangkan+Resort+Aqua+Park+Cilimus+Kuningan&amp;hl=id&amp;z=15&amp;output=embed"></iframe>
+        </div>
+      </div>
+      <div class="span-lg-4">
+        <div class="lokasi-card">
+          <h5 class="bold mb-3">Alamat</h5>
+          <div class="flex items-start gap-3 mb-3">
+            <div class="lokasi-ico" style="background:#fce4ec;color:#c62828;"><i class="ico ico-geo-alt-fill"></i></div>
+            <div class="t-sm t-muted">Jl. Raya Bandorasa Km. 12, Cilimus, Kabupaten Kuningan, Jawa Barat 45550</div>
+          </div>
+          <div class="flex items-start gap-3 mb-4">
+            <div class="lokasi-ico" style="background:#fff8e1;color:#f4a61c;"><i class="ico ico-clock"></i></div>
+            <div class="t-sm t-muted">Setiap hari: 08.00 - 17.00 WIB</div>
+          </div>
+          <div class="stack gap-2">
+            <a id="btnRute" class="ui-btn btn-route" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=Sangkan+Resort+Aqua+Park+Cilimus+Kuningan"><i class="ico ico-signpost-2 mr-2"></i>Petunjuk Arah</a>
+            <a class="ui-btn ui-btn-outline-primary r-pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sangkan+Resort+Aqua+Park+Cilimus+Kuningan"><i class="ico ico-box-arrow-up-right mr-2"></i>Buka di Google Maps</a>
+          </div>
+          <hr>
+          <div class="t-sm t-muted"><i class="ico ico-car-front mr-1"></i>Berada di jalur Jalan Raya Kuningan–Cirebon, Desa Bandorasa. Tersedia area parkir untuk kendaraan pengunjung.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARA PESAN -->
+<section id="cara-pesan">
+  <div class="shell">
+    <div class="t-center mb-5">
+      <div class="section-badge">Mudah &amp; Cepat</div>
+      <h2 class="section-title">Cara Pesan Tiket</h2>
+      <p class="section-sub mx-auto mt-2">Hanya 4 langkah mudah untuk dapatkan tiket masuk Sangkan Park!</p>
+    </div>
+    <div class="grid gap-4" id="stepsGrid"></div>
+    <div class="t-center mt-4">
+      <a href="pesan.html" class="ui-btn btn-hero-primary" style="background:linear-gradient(90deg,#0f4c81,#00b4d8);border:none;padding:.8rem 2.5rem;border-radius:50px;font-weight:700;color:#fff;">
+        <i class="ico ico-ticket-perforated mr-2"></i>Mulai Pesan Sekarang
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CEK TIKET (baru) -->
+<section class="bg-light-sp cek-tiket" id="cek-tiket">
+  <div class="shell">
+    <div class="cek-box">
+      <div class="grid items-center gap-3">
+        <div class="span-lg-5">
+          <h4 class="bold mb-1" style="color:#0f4c81;"><i class="ico ico-search mr-2"></i>Cek Status Tiket</h4>
+          <p class="t-muted t-sm mb-0">Masukkan nomor tiket untuk melihat status pembayaran dan QR Code tiket Anda.</p>
+        </div>
+        <div class="span-lg-7">
+          <form id="formCek" class="flex gap-2" novalidate>
+            <input type="text" class="ui-input" id="cekNo" placeholder="Contoh: WP2026111414052345" autocomplete="off" aria-label="Nomor tiket">
+            <button type="submit" class="ui-btn px-4" style="background:#0f4c81;color:#fff;border-radius:8px;font-weight:600;white-space:nowrap;">Cek Tiket</button>
+          </form>
+          <div id="cekMsg" class="t-sm t-danger mt-2" hidden></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section>
+  <div class="shell">
+    <div class="t-center mb-5">
+      <div class="section-badge"><i class="ico ico-chat-quote mr-1"></i>Testimoni</div>
+      <h2 class="section-title">Kata Pengunjung Kami</h2>
+    </div>
+    <div class="grid gap-4" id="reviewGrid"></div>
+  </div>
+</section>
+
+<!-- FAQ (baru) -->
+<section class="bg-light-sp" id="faq">
+  <div class="shell">
+    <div class="t-center mb-5">
+      <div class="section-badge"><i class="ico ico-question-circle mr-1"></i>FAQ</div>
+      <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+    </div>
+    <div class="grid">
+      <div class="span-center-8">
+        <div class="ui-accordion faq-acc" id="faqAcc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+  <div class="shell">
+    <div class="grid items-center gap-5">
+      <div class="span-lg-6">
+        <div class="section-badge">Hubungi Kami</div>
+        <h2 class="section-title mb-3">Ada Pertanyaan?</h2>
+        <p class="t-muted mb-4">Tim kami siap membantu Anda 7 hari seminggu. Jangan ragu untuk menghubungi kami!</p>
+        <div class="flex items-start gap-3 mb-3">
+          <div style="width:40px;height:40px;background:#e0f0ff;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#0f4c81;flex-shrink:0;"><i class="ico ico-geo-alt"></i></div>
+          <div><div class="semibold">Lokasi</div><div class="t-muted t-sm">Jl. Raya Bandorasa Km. 12, Cilimus, Kabupaten Kuningan, Jawa Barat 45550</div></div>
+        </div>
+        <div class="flex items-start gap-3 mb-3">
+          <div style="width:40px;height:40px;background:#e8f5e9;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#388e3c;flex-shrink:0;"><i class="ico ico-telephone"></i></div>
+          <div><div class="semibold">Telepon</div><div class="t-muted t-sm">(0232) 615168</div></div>
+        </div>
+        <div class="flex items-start gap-3 mb-3">
+          <div style="width:40px;height:40px;background:#fff8e1;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#f4a61c;flex-shrink:0;"><i class="ico ico-envelope"></i></div>
+          <div><div class="semibold">Email</div><div class="t-muted t-sm">info@sangkanpark.co.id</div></div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div style="width:40px;height:40px;background:#fce4ec;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#c62828;flex-shrink:0;"><i class="ico ico-clock"></i></div>
+          <div><div class="semibold">Jam Operasional</div><div class="t-muted t-sm">Setiap hari: 08.00 - 17.00 WIB</div></div>
+        </div>
+      </div>
+      <div class="span-lg-6">
+        <div class="bgc-white r-4 p-4 elev-sm">
+          <h5 class="bold mb-4">Kirim Pesan</h5>
+          <div id="kontakAlert" hidden></div>
+          <form id="formKontak" novalidate>
+            <div class="grid gap-3">
+              <div class="span-sm-6"><input type="text" class="ui-input" id="kNama" placeholder="Nama Anda" aria-label="Nama Anda" maxlength="100"></div>
+              <div class="span-sm-6"><input type="email" class="ui-input" id="kEmail" placeholder="Email Anda" aria-label="Email Anda" maxlength="100"></div>
+              <div class="span-12"><input type="text" class="ui-input" id="kSubjek" placeholder="Subjek" aria-label="Subjek" maxlength="150"></div>
+              <div class="span-12"><textarea class="ui-input" id="kPesan" rows="4" placeholder="Pesan Anda..." aria-label="Pesan Anda" maxlength="2000"></textarea></div>
+              <div class="span-12"><button type="submit" class="ui-btn w-full bold" style="background:#0f4c81;color:#fff;border-radius:8px;"><i class="ico ico-send mr-2"></i>Kirim Pesan</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="shell py-5">
+    <div class="grid gap-4">
+      <div class="span-lg-4">
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/img/logo_sangkan-removebg-preview.png" alt="Logo" style="height:40px;">
+          <div class="footer-brand">Sangkan Park</div>
+        </div>
+        <p style="color:rgba(255,255,255,.65);font-size:.875rem;line-height:1.7;">Destinasi wisata air terbaik di Jawa Barat. Temukan kesenangan bersama keluarga di Sangkan Resort Aqua Park.</p>
+        <div class="flex gap-2 mt-3">
+          <a href="#" class="ui-btn ui-btn-sm social-link" style="background:rgba(255,255,255,.1);color:#fff;border-radius:8px;" aria-label="Facebook"><i class="ico ico-facebook"></i></a>
+          <a href="#" class="ui-btn ui-btn-sm social-link" style="background:rgba(255,255,255,.1);color:#fff;border-radius:8px;" aria-label="Instagram"><i class="ico ico-instagram"></i></a>
+          <a href="#" class="ui-btn ui-btn-sm social-link" style="background:rgba(255,255,255,.1);color:#fff;border-radius:8px;" aria-label="TikTok"><i class="ico ico-tiktok"></i></a>
+          <a href="#" class="ui-btn ui-btn-sm social-link" style="background:rgba(255,255,255,.1);color:#fff;border-radius:8px;" aria-label="YouTube"><i class="ico ico-youtube"></i></a>
+        </div>
+      </div>
+      <div class="span-sm-6 span-lg-2">
+        <h6 class="bold mb-3" style="color:#f4a61c;">Navigasi</h6>
+        <ul class="list-plain" style="font-size:.875rem;">
+          <li class="mb-2"><a href="index.html">Beranda</a></li>
+          <li class="mb-2"><a href="#tentang">Tentang</a></li>
+          <li class="mb-2"><a href="#tiket">Tiket</a></li>
+          <li class="mb-2"><a href="#denah">Denah</a></li>
+          <li class="mb-2"><a href="#lokasi">Lokasi</a></li>
+          <li class="mb-2"><a href="#cara-pesan">Cara Pesan</a></li>
+          <li class="mb-2"><a href="#faq">FAQ</a></li>
+          <li class="mb-2"><a href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="span-sm-6 span-lg-2">
+        <h6 class="bold mb-3" style="color:#f4a61c;">Tiket</h6>
+        <ul class="list-plain" style="font-size:.875rem;" id="footerTiket"></ul>
+      </div>
+      <div class="span-lg-4">
+        <h6 class="bold mb-3" style="color:#f4a61c;">Lokasi Kami</h6>
+        <p style="color:rgba(255,255,255,.65);font-size:.875rem;">Jl. Raya Bandorasa Km. 12, Cilimus, Kab. Kuningan, Jawa Barat 45550</p>
+        <p style="font-size:.875rem;"><i class="ico ico-telephone mr-1" style="color:#f4a61c;"></i><a href="tel:0232615168">(0232) 615168</a></p>
+        <p style="font-size:.875rem;"><i class="ico ico-envelope mr-1" style="color:#f4a61c;"></i><a href="mailto:info@sangkanpark.co.id">info@sangkanpark.co.id</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="shell flex flex-wrap justify-between items-center gap-2">
+      <span>&copy; <span id="tahun">2026</span> PT. Sangkan Park. All Rights Reserved.</span>
+      <span>Dibuat dengan <i class="ico ico-heart-fill t-danger"></i> untuk Sangkan Resort Aqua Park</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<div class="wa-float">
+  <a href="https://wa.me/628123456789" target="_blank" rel="noopener" title="Chat WhatsApp" aria-label="Chat WhatsApp"><i class="ico ico-whatsapp"></i></a>
+</div>
+
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/qr.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/landing.js"></script>
+</body>
+</html>

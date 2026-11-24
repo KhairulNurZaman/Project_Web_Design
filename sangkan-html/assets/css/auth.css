@@ -1,0 +1,18 @@
+body { margin:0; min-height:100vh; display:flex; font-family:'Segoe UI',sans-serif; background:#f0f4f8; }
+.auth-bg { flex:1; display:none; background:linear-gradient(135deg,#0a2d50,#1565c0,#00b4d8); position:relative; overflow:hidden; }
+.auth-bg::before { content:''; position:absolute; inset:0; background:url('../images/gambar-sangkan.webp') center/cover; opacity:.25; }
+.auth-bg-content { position:relative; z-index:2; padding:3rem; color:#fff; height:100%; display:flex; flex-direction:column; justify-content:center; }
+.auth-panel { width:100%; max-width:440px; background:#fff; padding:2.5rem; display:flex; flex-direction:column; justify-content:center; min-height:100vh; }
+body.page-register .auth-panel { max-width:480px; overflow-y:auto; }
+.ui-group-text { background:#f8f9fa; border-right:none; }
+body.page-login .ui-input { border-left:none; }
+body.page-register .ui-input { border-left:none; }
+.ui-input:focus,.ui-select:focus { box-shadow:none; border-color:#0f4c81; }
+.ui-group:focus-within .ui-group-text,.ui-group:focus-within .ui-input { border-color:#0f4c81; }
+.btn-login { background:linear-gradient(90deg,#0f4c81,#1565c0); color:#fff; font-weight:600; border:none; }
+.btn-login:hover { background:linear-gradient(90deg,#0a2d50,#0f4c81); color:#fff; }
+.btn-reg { background:linear-gradient(90deg,#f4a61c,#e67e00); color:#fff; font-weight:600; border:none; }
+.btn-reg:hover { background:linear-gradient(90deg,#e67e00,#c05a00); color:#fff; }
+.tab-btn { border:none; background:none; padding:.5rem 1rem; color:#888; font-weight:500; border-bottom:2px solid transparent; cursor:pointer; }
+.tab-btn.active { color:#0f4c81; border-bottom-color:#0f4c81; }
+@media(min-width:768px){ .auth-bg{display:flex;} }

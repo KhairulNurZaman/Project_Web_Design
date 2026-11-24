@@ -1,0 +1,34 @@
+@media print { .no-print { display:none !important; } body { margin:0; } }
+.t-center { text-align:center; } .t-right { text-align:right; }
+.flex { display:flex; } .justify-between { justify-content:space-between; } .items-start { align-items:flex-start; }
+.mb-3 { margin-bottom:1rem; }
+
+/* ===== E-TIKET ===== */
+body.print-tiket { font-family:'Segoe UI',sans-serif; background:#f0f4f8; padding:20px; }
+.print-tiket .ticket { background:#fff; max-width:580px; margin:0 auto; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,.1); }
+.print-tiket .ticket-head { background:linear-gradient(135deg,#0a2d50,#0f4c81); color:#fff; padding:1.5rem; display:flex; justify-content:space-between; align-items:center; }
+.print-tiket .ticket-body { padding:1.5rem; }
+.print-tiket .row-info { display:flex; justify-content:space-between; padding:.4rem 0; border-bottom:1px dashed #eee; }
+.print-tiket .row-info:last-child { border-bottom:none; }
+.print-tiket .lbl { font-size:.75rem; color:#999; }
+.print-tiket .val { font-weight:600; color:#1a1a2e; }
+.print-tiket .qr-box { text-align:center; padding:1rem; background:#f8f9fa; border-radius:12px; margin-top:1rem; }
+.print-tiket .qr-box svg { width:140px; height:140px; display:block; margin:0 auto; border-radius:6px; }
+.print-tiket .perf { height:16px; background:repeating-linear-gradient(to right,#fff 0,#fff 8px,#f0f4f8 8px,#f0f4f8 16px); }
+.print-tiket .status-badge { display:inline-block; padding:.3rem .9rem; border-radius:50px; font-size:.75rem; font-weight:700; }
+.print-tiket .aktif { background:#d1fae5; color:#065f46; }
+.print-tiket .menunggu { background:#fef3c7; color:#92400e; }
+.print-tiket .used { background:#dbeafe; color:#1e40af; }
+.print-tiket .batal { background:#fee2e2; color:#991b1b; }
+.btn-print { color:#fff; border:none; padding:.5rem 1.5rem; border-radius:50px; font-weight:600; cursor:pointer; }
+
+/* ===== STRUK ===== */
+body.print-struk { font-family:'Courier New',monospace; background:#f0f4f8; padding:20px; font-size:12px; }
+.print-struk .struk { background:#fff; max-width:300px; margin:0 auto; padding:16px; border:1px dashed #ccc; }
+.print-struk .c { text-align:center; }
+.print-struk .srow { display:flex; justify-content:space-between; margin:2px 0; }
+.print-struk .line { border-top:1px dashed #ccc; margin:6px 0; }
+.print-struk .b { font-weight:700; }
+body.print-struk.admin .struk { max-width:320px; }
+body.print-struk.admin .line { margin:8px 0; }
+body.print-struk.admin .srow { margin:0; }

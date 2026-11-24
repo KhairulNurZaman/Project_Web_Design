@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat Pesanan</title>
+  <link rel="icon" href="assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
+  <link rel="stylesheet" href="assets/css/customer.css">
+</head>
+<body class="page-riwayat">
+<div class="top-bar">
+  <div class="shell flex justify-between items-center">
+    <a href="index.html"><i class="ico ico-arrow-left mr-1"></i>Beranda</a>
+    <span class="bold">Riwayat Pesanan Saya</span>
+    <a href="#" id="btnLogout"><i class="ico ico-box-arrow-left mr-1"></i>Logout</a>
+  </div>
+</div>
+<div class="shell py-4">
+  <div class="flex justify-between items-center mb-3 flex-wrap gap-2">
+    <h5 class="bold mb-0" style="color:#0f4c81;"><i class="ico ico-clock-history mr-2"></i>Pesanan Saya</h5>
+    <div class="flex gap-2">
+      <a href="profil.html" class="ui-btn ui-btn-sm ui-btn-outline-primary" style="border-radius:50px;"><i class="ico ico-person mr-1"></i>Profil</a>
+      <a href="pesan.html" class="ui-btn ui-btn-sm" style="background:#f4a61c;color:#fff;border:none;border-radius:50px;"><i class="ico ico-plus mr-1"></i>Pesan Baru</a>
+    </div>
+  </div>
+  <div id="list"></div>
+</div>
+
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/qr.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/riwayat.js"></script>
+</body>
+</html>
